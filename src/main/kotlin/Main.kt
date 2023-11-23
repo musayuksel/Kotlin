@@ -1,4 +1,4 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
-
+    var myFirstVariable: String = "Hello World"//camelCase is the standard for naming variables
+    println(myFirstVariable)
 }
