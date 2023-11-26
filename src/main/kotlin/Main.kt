@@ -134,3 +134,11 @@ fun pedometerStepsToCalories(numberOfSteps: Int): Double {
 fun isTodayScreenTimeMoreThanYesterday(timeSpentToday: Int, timeSpentYesterday: Int): Boolean {
     return timeSpentToday > timeSpentYesterday
 }
+
+//10. Refactoring
+fun displayCityWeather(city: String, lowTemperature: Int, highTemperature: Int, chanceOfRain: Int) {
+    println("City: $city")
+    println("Low temperature: $lowTemperature, High temperature: $highTemperature")
+    println("Chance of rain: $chanceOfRain%")
+    println()
+}
