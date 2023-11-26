@@ -129,3 +129,8 @@ fun pedometerStepsToCalories(numberOfSteps: Int): Double {
     val totalCaloriesBurned = numberOfSteps * caloriesBurnedForEachStep
     return totalCaloriesBurned
 }
+
+//9. Compare numbers
+fun isTodayScreenTimeMoreThanYesterday(timeSpentToday: Int, timeSpentYesterday: Int): Boolean {
+    return timeSpentToday > timeSpentYesterday
+}
