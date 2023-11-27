@@ -15,7 +15,7 @@ fun forLoopExample() {
 }
 
 fun whiteAlphabet() {
-    for (letter in 'a'..'z') {
+    for (letter in 'a'..'z') { // this called range
         println(letter)
     }
 }
