@@ -5,4 +5,9 @@ class Circle(val radius: Double) : Shape("Circle") {
     override fun calculatePerimeter(): Number {
         return 2 * Math.PI * radius
     }
+
+    fun getName(): String {
+        return name
+    }
+
 }
