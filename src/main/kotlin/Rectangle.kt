@@ -1,8 +1,9 @@
-class Rectangle (val height: Int, val width: Int) : Shape("Rectangle")  {
+class Rectangle(val height: Int, val width: Int) : Shape("Rectangle") {
     init {
         // I can use the name property because it's inherited from the parent class
         println("The height of the $name is $height and the width is $width")
     }
+
     override fun calculateArea(): Int {
         // override means we are overriding the parent function
         return height * width
