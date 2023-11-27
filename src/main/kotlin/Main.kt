@@ -1,3 +1,4 @@
 fun main() {
-    whileLoop()//Arrays.kt
+//    whileLoop()//Arrays.kt
+    forLoopExample()
 }
