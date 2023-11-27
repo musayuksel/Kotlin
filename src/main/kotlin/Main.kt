@@ -1,4 +1,5 @@
 fun main() {
 //    whileLoop()//Arrays.kt
-    forLoopExample()
+//    forLoopExample() //ForLoop.kt
+    whenExercise() //When.kt
 }
