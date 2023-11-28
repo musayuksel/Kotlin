@@ -4,8 +4,16 @@ class Rectangle(val height: Int, val width: Int) : Shape("Rectangle") {
         println("The height of the $name is $height and the width is $width")
     }
 
+    //    Secondary constructor
+    //for example we want to create a square
+    constructor(side: Int) : this(side, side) {
+        println("The height of the $name is $height and the width is $width")
+    }
+    //we can create multiple secondary constructors, the purpose is to have multiple ways to create an object
+
+
     //    I can access the name property because it's protected and I'm in the child class
-    fun getName(): String {
+    fun getNameAccessor(): String {
         return name
     }
 

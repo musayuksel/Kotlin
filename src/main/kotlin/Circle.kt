@@ -6,7 +6,7 @@ class Circle(val radius: Double) : Shape("Circle") {
         return 2 * Math.PI * radius
     }
 
-    fun getName(): String {
+     fun getNameAccessor(): String {
         return name
     }
 

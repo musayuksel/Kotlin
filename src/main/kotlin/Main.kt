@@ -25,10 +25,15 @@ fun main() {
 
 //    CLASS
     var rectangle = Rectangle(10, 20)
-    println("The area of ${rectangle.getName()} is ${rectangle.calculateArea()}")
-    println("The perimeter of ${rectangle.getName()} is ${rectangle.calculatePerimeter()}")
+    println("The area of ${rectangle.getNameAccessor()} is ${rectangle.calculateArea()}")
+    println("The perimeter of ${rectangle.getNameAccessor()} is ${rectangle.calculatePerimeter()}")
 //    WE CAN'T access the NAME property because it's private
     var myCircle = Circle(10.0)
-    println("The area of ${myCircle.getName()} is ${myCircle.calculateArea()}")
-    println("The perimeter of ${myCircle.getName()} is ${myCircle.calculatePerimeter()}")
+    println("The area of ${myCircle.getNameAccessor()} is ${myCircle.calculateArea()}")
+    println("The perimeter of ${myCircle.getNameAccessor()} is ${myCircle.calculatePerimeter()}")
+
+//    Square
+    var square = Rectangle(10)
+    println("The area of ${square.getNameAccessor()} is ${square.calculateArea()}")
+    println("The perimeter of ${square.getNameAccessor()} is ${square.calculatePerimeter()}")
 }
