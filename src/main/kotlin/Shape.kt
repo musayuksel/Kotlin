@@ -4,7 +4,8 @@ abstract class Shape(protected val name: String) { //open means this class can b
         printName()
     }
 
-    fun printName() {
+    private fun printName() {
+        //private means this function can only be accessed by this class
         println("The new shape is $name")
     }
 
