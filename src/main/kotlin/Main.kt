@@ -37,6 +37,10 @@ fun main() {
     println("The area of ${square.getNameAccessor()} is ${square.calculateArea()}")
     println("The perimeter of ${square.getNameAccessor()} is ${square.calculatePerimeter()}")
 
+//    Companion object
+    var randomCircle = Circle.createRandomCircle()
+    println("The area of ${randomCircle.getNameAccessor()} is ${randomCircle.calculateArea()}")
+    println("The perimeter of ${randomCircle.getNameAccessor()} is ${randomCircle.calculatePerimeter()}")
 
 }
 //    The same way we can override the functions
