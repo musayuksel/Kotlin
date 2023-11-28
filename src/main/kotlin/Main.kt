@@ -24,7 +24,7 @@ fun main() {
 //    println("Is 5 even? ${5.isEven()}") //ExtensionFunctions.kt
 
 //    CLASS
-    var rectangle = Rectangle(10, 20)
+    var rectangle = Rectangle(10.0, 20.0)
     println("The area of ${rectangle.getNameAccessor()} is ${rectangle.calculateArea()}")
     println("The perimeter of ${rectangle.getNameAccessor()} is ${rectangle.calculatePerimeter()}")
 //    WE CAN'T access the NAME property because it's private
@@ -33,7 +33,18 @@ fun main() {
     println("The perimeter of ${myCircle.getNameAccessor()} is ${myCircle.calculatePerimeter()}")
 
 //    Square
-    var square = Rectangle(10)
+    var square = Rectangle(10.0)
     println("The area of ${square.getNameAccessor()} is ${square.calculateArea()}")
     println("The perimeter of ${square.getNameAccessor()} is ${square.calculatePerimeter()}")
+
+
 }
+//    The same way we can override the functions
+fun maxArea(shape1: Shape, shape2: Shape): Shape {
+    return if (shape1.calculateArea() > shape2.calculateArea()) shape1 else shape2
+}
+
+fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape): Shape {
+    return maxArea(maxArea(shape1, shape2), shape3)
+}
+//we used the same function name but with different arguments
