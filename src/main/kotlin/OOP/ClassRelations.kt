@@ -24,11 +24,24 @@ class SmartPhoneChild(deviceName: String, deviceCategory: String) :
                 field = value
             }
         }
+
     fun increaseVolume() {
         speakerVolume += 1 //this will call the setter function and check if the value is in the range
         println("Speaker volume increased to $speakerVolume.")
     }
 }
+
+
+//IS-A relationship : inheritance
+//HAS-A relationship : composition
+
+// The SmartHome class HAS-A smart TV device.
+class SmartHome(val smartDeviceSuper: SmartDeviceSuper) {
+    fun turnOnTv() {// This function can access the SmartDeviceSuper properties and functions
+        smartDeviceSuper.turnOn()
+    }
+}
+
 
 fun main() {
     val smartPhone = SmartPhoneChild("Samsung Galaxy S20", "Communication")
