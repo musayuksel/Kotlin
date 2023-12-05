@@ -10,10 +10,12 @@ fun printNotificationSummary(numberOfMessages: Int) {
     }
 }
 
-fun main() {
-    val morningNotification = 51
-    val eveningNotification = 135
-
-    printNotificationSummary(morningNotification)
-    printNotificationSummary(eveningNotification)
+// 3. Movie-ticket price
+fun ticketPrice(age: Int, isMonday: Boolean): Int {
+    return when (age) {
+        in 0..13 -> 15
+        in 13..60 -> if (isMonday) 25 else 30
+        in 61..100 -> 20
+        else -> -1
+    }
 }
