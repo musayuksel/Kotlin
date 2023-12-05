@@ -7,13 +7,17 @@ open class SmartDeviceSuper(val name: String, val category: String) {
 
     var deviceStatus = "online"
     fun turnOn() {
+        deviceStatus = "online"
         println("Smart device is turned on.")
         turnOff()// we can call a function from inside the class
     }
 
-    fun turnOff() {
+    open fun turnOff() {// we can override this function in the subclass
+        deviceStatus = "offline"
         println("Smart device is turned off.")
     }
+
+    open val deviceType = "Unknown" // we can override this property in the subclass,
 }
 
 class SmartPhoneChild(deviceName: String, deviceCategory: String) :
@@ -24,11 +28,21 @@ class SmartPhoneChild(deviceName: String, deviceCategory: String) :
                 field = value
             }
         }
-
+    override val deviceType = "Smartphone" // we can override this property in the subclass,
     fun increaseVolume() {
         speakerVolume += 1 //this will call the setter function and check if the value is in the range
         println("Speaker volume increased to $speakerVolume.")
     }
+
+    //    Override superclass methods
+    override fun turnOff() {
+//        The override keyword informs the Kotlin runtime to execute the code enclosed in the method defined in the subclass
+//        This is called POLYMORPHISM
+//        deviceStatus = "offline" // OR
+        super.turnOff() //this will call the superclass turnOff() function
+        println("Smartphone is turned off.")
+    }
+
 }
 
 
