@@ -69,8 +69,27 @@ class Song(val title: String, val artist: String, val publishedYear: Int, var pl
     }
 }
 
+
+// 6. Internet profile
 fun main() {
-    val mySong = Song("The Mesopotamians", "They Might Be Giants", 2020, 1153)
-    mySong.printDescription()
-    println("Song is popular: ${mySong.isPopular}")
+    val amanda = Person("Amanda", 33, "play tennis", null)
+    val atiqah = Person("Atiqah", 28, "climb", amanda)
+
+    amanda.showProfile()
+    atiqah.showProfile()
+}
+
+
+class Person(val name: String, val age: Int, val hobby: String?, val referrer: Person?) {
+    fun showProfile() {
+        println("Name: $name")
+        println("Age: $age")
+
+//        if (hobby != null) print("Likes to $hobby.")//or
+        hobby?.let { print("Likes to $hobby.") } // .let is a scope function that executes the block of code only if the object is not null.
+        if (referrer == null) print(" Doesn't have a referrer.") else
+            print("Has a referrer named ${referrer.name}, who likes to ${referrer.hobby}.")
+
+        println("\n")
+    }
 }
