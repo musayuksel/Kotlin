@@ -21,32 +21,32 @@ fun ticketPrice(age: Int, isMonday: Boolean): Int {
 }
 
 // 4. Temperature converter
-fun main() {
-    val celsiusToFahrenheit = { celsius: Double -> celsius * 1.8 + 32 }
-    val kelvinToCelsius = { kelvin: Double -> kelvin - 273.15 }
-    val fahrenheitToKelvin = { fahrenheit: Double -> (fahrenheit - 32) * (5.0 / 9.0) + 273.15 }
-
-    printFinalTemperature(
-        initialMeasurement = 27.0,
-        initialUnit = "Celsius",
-        finalUnit = "Fahrenheit",
-        conversionFormula = celsiusToFahrenheit
-    )
-
-    printFinalTemperature(
-        initialMeasurement = 350.0,
-        initialUnit = "Kelvin",
-        finalUnit = "Celsius",
-        conversionFormula = kelvinToCelsius
-    )
-
-    printFinalTemperature(
-        initialMeasurement = 10.0,
-        initialUnit = "Fahrenheit",
-        finalUnit = "Kelvin",
-        conversionFormula = fahrenheitToKelvin
-    )
-}
+//fun main() {
+//    val celsiusToFahrenheit = { celsius: Double -> celsius * 1.8 + 32 }
+//    val kelvinToCelsius = { kelvin: Double -> kelvin - 273.15 }
+//    val fahrenheitToKelvin = { fahrenheit: Double -> (fahrenheit - 32) * (5.0 / 9.0) + 273.15 }
+//
+//    printFinalTemperature(
+//        initialMeasurement = 27.0,
+//        initialUnit = "Celsius",
+//        finalUnit = "Fahrenheit",
+//        conversionFormula = celsiusToFahrenheit
+//    )
+//
+//    printFinalTemperature(
+//        initialMeasurement = 350.0,
+//        initialUnit = "Kelvin",
+//        finalUnit = "Celsius",
+//        conversionFormula = kelvinToCelsius
+//    )
+//
+//    printFinalTemperature(
+//        initialMeasurement = 10.0,
+//        initialUnit = "Fahrenheit",
+//        finalUnit = "Kelvin",
+//        conversionFormula = fahrenheitToKelvin
+//    )
+//}
 
 
 fun printFinalTemperature(
@@ -57,4 +57,20 @@ fun printFinalTemperature(
 ) {
     val finalMeasurement = String.format("%.2f", conversionFormula(initialMeasurement)) // two decimal places
     println("$initialMeasurement degrees $initialUnit is $finalMeasurement degrees $finalUnit.")
+}
+
+// 5. Song catalog
+class Song(val title: String, val artist: String, val publishedYear: Int, var playCount: Int) {
+    val isPopular: Boolean
+        get() = playCount >= 1000
+
+    fun printDescription() {
+        println("$title, performed by $artist, was released in $publishedYear.")
+    }
+}
+
+fun main() {
+    val mySong = Song("The Mesopotamians", "They Might Be Giants", 2020, 1153)
+    mySong.printDescription()
+    println("Song is popular: ${mySong.isPopular}")
 }
