@@ -71,13 +71,13 @@ class Song(val title: String, val artist: String, val publishedYear: Int, var pl
 
 
 // 6. Internet profile
-fun main() {
-    val amanda = Person("Amanda", 33, "play tennis", null)
-    val atiqah = Person("Atiqah", 28, "climb", amanda)
-
-    amanda.showProfile()
-    atiqah.showProfile()
-}
+//fun main() {
+//    val amanda = Person("Amanda", 33, "play tennis", null)
+//    val atiqah = Person("Atiqah", 28, "climb", amanda)
+//
+//    amanda.showProfile()
+//    atiqah.showProfile()
+//}
 
 
 class Person(val name: String, val age: Int, val hobby: String?, val referrer: Person?) {
@@ -92,4 +92,47 @@ class Person(val name: String, val age: Int, val hobby: String?, val referrer: P
 
         println("\n")
     }
+}
+
+// 7.  Foldable phones
+
+open class Phone(var isScreenLightOn: Boolean = false) {
+    open fun switchOn() {
+        isScreenLightOn = true
+    }
+
+    fun switchOff() {
+        isScreenLightOn = false
+    }
+
+    fun checkPhoneScreenLight() {
+        val phoneScreenLight = if (isScreenLightOn) "on" else "off"
+        println("The phone screen's light is $phoneScreenLight.")
+    }
+}
+
+class FoldablePhone(var isFolded: Boolean = false) : Phone() {
+    fun fold() {
+        isFolded = true
+    }
+
+    fun unfold() {
+        isFolded = false
+    }
+
+    override fun switchOn() {
+        if (!isFolded) {
+            isScreenLightOn = true
+        }
+    }
+}
+
+fun main() {
+    val newFoldablePhone = FoldablePhone(isFolded = true)
+
+    newFoldablePhone.switchOn()
+    newFoldablePhone.checkPhoneScreenLight()
+    newFoldablePhone.unfold()
+    newFoldablePhone.switchOn()
+    newFoldablePhone.checkPhoneScreenLight()
 }
