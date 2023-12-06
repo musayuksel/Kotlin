@@ -19,3 +19,42 @@ fun ticketPrice(age: Int, isMonday: Boolean): Int {
         else -> -1
     }
 }
+
+// 4. Temperature converter
+fun main() {
+    val celsiusToFahrenheit = { celsius: Double -> celsius * 1.8 + 32 }
+    val kelvinToCelsius = { kelvin: Double -> kelvin - 273.15 }
+    val fahrenheitToKelvin = { fahrenheit: Double -> (fahrenheit - 32) * (5.0 / 9.0) + 273.15 }
+
+    printFinalTemperature(
+        initialMeasurement = 27.0,
+        initialUnit = "Celsius",
+        finalUnit = "Fahrenheit",
+        conversionFormula = celsiusToFahrenheit
+    )
+
+    printFinalTemperature(
+        initialMeasurement = 350.0,
+        initialUnit = "Kelvin",
+        finalUnit = "Celsius",
+        conversionFormula = kelvinToCelsius
+    )
+
+    printFinalTemperature(
+        initialMeasurement = 10.0,
+        initialUnit = "Fahrenheit",
+        finalUnit = "Kelvin",
+        conversionFormula = fahrenheitToKelvin
+    )
+}
+
+
+fun printFinalTemperature(
+    initialMeasurement: Double,
+    initialUnit: String,
+    finalUnit: String,
+    conversionFormula: (Double) -> Double
+) {
+    val finalMeasurement = String.format("%.2f", conversionFormula(initialMeasurement)) // two decimal places
+    println("$initialMeasurement degrees $initialUnit is $finalMeasurement degrees $finalUnit.")
+}
