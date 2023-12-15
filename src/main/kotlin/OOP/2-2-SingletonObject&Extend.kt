@@ -22,6 +22,21 @@ class Quiz {
         var answered: Int = 3
     }
 
+    //    let()
+    // The let() function allows you to refer to an object in a lambda expression using the identifier it, instead of the object's actual name.
+    fun printQuiz() {
+//        println(question1.questionText)
+//        println(question1.answer)
+//        println(question1.difficulty)
+//        println() // this is not best practice
+
+        question1.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)// better
+        }
+    }
+
 }
 
 //    Add an extension property
@@ -38,4 +53,6 @@ fun Quiz.StudentProgress.printProgressBar() {
 
 fun main() {
     Quiz.printProgressBar()
+    val quiz = Quiz()
+    quiz.printQuiz()
 }
