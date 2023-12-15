@@ -1,5 +1,5 @@
 fun main() {
-//    whileLoop()//Arrays.kt
+//    whileLoop()//Arrays&Lists.kt
 //    forLoopExample() //ForLoop.kt
 //    whenExercise() //When.kt
 //    filterSortAndUpdateUsers() //MapFilter.kt
