@@ -1,3 +1,7 @@
+package higher_order_functions
+
+import User
+
 fun filterSortAndUpdateUsers() {
     val users = listOf(
         User("John", 25),
